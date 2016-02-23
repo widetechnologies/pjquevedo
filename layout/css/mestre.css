@@ -1,0 +1,116 @@
+/* Sticky footer styles
+            -------------------------------------------------- */
+.falsea:hover, .falsea{
+    text-decoration: none !important;
+    color: #000 !important;
+    font-size: 1.3em !important;
+    font-weight: 850;
+}
+
+.falsea2:hover, .falsea2{
+    text-decoration: none !important;
+    color: #47D119 !important;
+    font-size: 1.3em !important;
+    font-weight: 850;
+}
+html,
+body {
+    height: 100%;
+    /*background-color: #EEE;*/
+    /* The html and body elements cannot have any padding or margin. */
+}
+.body{
+    background-color: #fff;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -50px;
+    padding-bottom: 10px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 50px;
+}
+#footer {
+    background-color: #2069B4;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+    padding-top: 60px;
+}
+.container .credit {
+    margin: 20px 0;
+}
+
+code {
+    font-size: 80%;
+}
+.navbar {
+    margin: 0;
+}
+.navbar-default{
+    background-color: #2069B4;
+    border: none;
+    border-radius: 0
+}
+.navbar-default .navbar-brand {
+    color: #EEE;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ddd;
+    background-color: transparent;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #eee;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #6FA9E4;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #eee
+}
+
+.navbar-header{
+    padding-left: 55px; 
+    background: url(../img/logo-facens-2.png) no-repeat; 
+    background-size: 48px 48px; 
+    background-origin: padding-box;
+}
+#matricula{
+    border: 1px solid #357ebd;
+}
+#rodape{
+    margin-top: 8px;
+    text-align: center;
+    font-size: 8pt;
+    color: white;
+}
