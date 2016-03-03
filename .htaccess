@@ -1,4 +1,5 @@
 #Removendo extensão .php
+AddHandler application/x-httpd-php55 .php
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
