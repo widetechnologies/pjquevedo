@@ -63,7 +63,7 @@ $turma = new vw_turma();
 $turmas = $turma->selectAll();
 $models = $model->selectAll();
 
-$title = 'Aluno turma | Chamada - FACENS';
+$title = 'Aluno turma | Chamada - Wide Education';
 include './layout/page/alunoturma.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
     }
 }//if
 
-$title = 'Apagar aula | Chamada - FACENS';
+$title = 'Apagar aula | Chamada - Wide Education';
 include './layout/page/excluir-dia.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

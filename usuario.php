@@ -67,7 +67,7 @@ if (isset($_GET['id'])) {
 }
 
 $usuarios = $usuarioU->selectAll();
-$title = 'Usuários | Chamada - FACENS';
+$title = 'Usuários | Chamada - Wide Education';
 include './layout/page/usuario.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

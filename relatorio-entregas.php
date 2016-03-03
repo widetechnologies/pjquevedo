@@ -47,7 +47,7 @@ if (isset($_POST['todos'])) {
     $preAu = array();
     $preAu = $control->selectAllByMes($_POST['mes']);
 }//if isset todos
-$title = 'Relatório De Diários | Chamada - FACENS';
+$title = 'Relatório De Diários | Chamada - Wide Education';
 include './layout/page/relatorio-entrega-diarios.page.php';
 
 $corpo = ob_get_clean();

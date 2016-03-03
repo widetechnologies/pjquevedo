@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
     header("Location: ./diario-branco");
     exit();
 }// isset post submit
-$title = 'Gerar Diário | Chamada - FACENS';
+$title = 'Gerar Diário | Chamada - Wide Education';
 include './layout/page/gerar-diario.page.php';
 
 $corpo = ob_get_clean();

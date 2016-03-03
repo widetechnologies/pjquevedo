@@ -36,7 +36,7 @@ elseif ($_SESSION['mes'] == 12)
 
 
 //variaveis de meta
-$title = 'Diário de Sala - '  . ' - ' . $mesExtenso . ' | FACENS';
+$title = 'Diário de Sala - '  . ' - ' . $mesExtenso . ' | Wide Education';
 
 ob_start();
 include_once './layout/grid/diarioBranco.grid.php';

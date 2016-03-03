@@ -54,7 +54,7 @@ if (isset($_POST['submit']) && $_POST['cod_turma'] != '' && $_POST['options'] !=
         $msg = $exc->getTraceAsString();
     }//catch
 }//isset
-$title = 'Controle de Entrega de Diários | FACENS';
+$title = 'Controle de Entrega de Diários | Wide Education';
 include './layout/page/controle-diario.page.php';
 $corpo = ob_get_clean();
 

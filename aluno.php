@@ -75,10 +75,10 @@ if (isset($_GET['ra'])) {
         $curso->selectByRa($ra);
     }
     include './layout/page/aluno.page.php';
-    $title = 'Detalhes do aluno '.$ra.' | Chamada - FACENS';
+    $title = 'Detalhes do aluno '.$ra.' | Chamada - Wide Education';
 } else{
     include './layout/form/pesquisar-aluno.form.php';
-    $title = 'Pesquisa de Alunos | Chamada - FACENS';
+    $title = 'Pesquisa de Alunos | Chamada - Wide Education';
 }
 
 $corpo = ob_get_clean();

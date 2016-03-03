@@ -63,7 +63,7 @@ if (isset($_GET['id'])) {
 }
 $models = $model->selectAll();
 
-$title = 'Professor | Chamada - FACENS';
+$title = 'Professor | Chamada - Wide Education';
 include './layout/page/professor.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

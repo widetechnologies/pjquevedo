@@ -82,7 +82,7 @@ if (isset($_POST['ausente'])) {
 }
 
 $aluno = $alunos[$_SESSION['indice']];
-$title = 'Chamada Individual | Chamada - FACENS';
+$title = 'Chamada Individual | Chamada - Wide Education';
 include './layout/page/chamada-individual.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

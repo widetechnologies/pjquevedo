@@ -158,7 +158,7 @@ if (isset($_POST['submit'])) {
     header("Location: conteudo");
     exit();
 }//isset submit
-$title = 'Histórico | Chamada - FACENS';
+$title = 'Histórico | Chamada - Wide Education';
 include './layout/page/manual.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

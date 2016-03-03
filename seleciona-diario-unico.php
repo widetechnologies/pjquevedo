@@ -83,7 +83,7 @@ if (isset($_POST['exporta'])) {
 }
 
 
-$title = 'Selecionar Turma Para Diário | Chamada - FACENS';
+$title = 'Selecionar Turma Para Diário | Chamada - Wide Education';
 include './layout/page/seleciona-diario-unico.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

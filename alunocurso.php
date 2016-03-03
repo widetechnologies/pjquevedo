@@ -72,7 +72,7 @@ $models = $model->selectAll();
 $curso = new vw_curso();
 $cursos = $curso->selectAll();
 
-$title = 'Aluno Curso | Chamada - FACENS';
+$title = 'Aluno Curso | Chamada - Wide Education';
 include './layout/page/alunocurso.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

@@ -63,7 +63,7 @@ foreach ($aulas as $a) {
 
 if (isset($_GET['ok']) && $_GET['ok'] == 1) {
     include './layout/page/fim.page.php';
-    $title = 'Chamada Realizada Com Sucesso | Chamada - FACENS';
+    $title = 'Chamada Realizada Com Sucesso | Chamada - Wide Education';
 } else {
     include './layout/page/conteudo.page.php';
 }

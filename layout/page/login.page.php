@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="layout/img/favicon.ico">
-        <title>Login - Chamada | FACENS</title>
+        <title>Login - Chamada | Wide Education</title>
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="layout/bootstrap/css/bootstrap.css">
         <!-- Custom styles for this template -->

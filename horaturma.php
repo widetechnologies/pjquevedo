@@ -64,7 +64,7 @@ $horarios = $hora->selectAll();
 $turma = new vw_turma();
 $turmas = $turma->selectAll();
 
-$title = 'Hora turma | Chamada - FACENS';
+$title = 'Hora turma | Chamada - Wide Education';
 include './layout/page/horaturma.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

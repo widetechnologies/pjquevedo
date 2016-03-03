@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
 }
 $models = $model->selectAll();
 
-$title = 'Disciplina | Chamada - FACENS';
+$title = 'Disciplina | Chamada - Wide Education';
 include './layout/page/disciplina.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

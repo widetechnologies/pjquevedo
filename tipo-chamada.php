@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-$title = 'Selecionar Tipo de Chamada | FACENS';
+$title = 'Selecionar Tipo de Chamada | Wide Education';
 include './layout/page/tipo-chamada.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

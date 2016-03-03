@@ -65,7 +65,7 @@ if (isset($_GET['id'])) {
 }
 $models = $model->selectAll();
 
-$title = 'Horário | Chamada - FACENS';
+$title = 'Horário | Chamada - Wide Education';
 include './layout/page/horario.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

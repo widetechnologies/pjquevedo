@@ -20,7 +20,7 @@ if(isset($_SESSION['operador'])){
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Cache-Control" content="no-store" />
 
-        <title><?php echo isset($title) ? $title : 'Chamada | FACENS - Faculdade de Engenharia de Sorocaba' ?></title>
+        <title><?php echo isset($title) ? $title : 'Chamada | Wide Education - Faculdade de Engenharia de Sorocaba' ?></title>
         <link rel="icon" type="image/png" href="<?php echo _URI_ ?>/layout/img/favicon.ico">
 
         <!--Estilos da pagina-->
@@ -55,7 +55,7 @@ if(isset($_SESSION['operador'])){
                 <div class="container-fluid">
                     <!--Brand and toggle get grouped for better mobile display--> 
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="<?php echo _URI_ ?>/">Chamada - Facens</a>
+                        <a class="navbar-brand" href="<?php echo _URI_ ?>/">Chamada - Wide Education</a>
                         <?php if ($operador->getLogin() != ''): ?>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                                 <span class="sr-only">Menu</span>
@@ -145,7 +145,7 @@ if(isset($_SESSION['operador'])){
                 <div id="footer">
                     <div class="container">
                         <div id="rodape">
-                            FACENS - Faculdade de Engenharia de Sorocaba<br />
+                            Wide Education - Faculdade de Engenharia de Sorocaba<br />
                             &copy <?php // echo date('Y')    ?>
                         </div>
                     </div>

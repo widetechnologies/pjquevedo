@@ -39,7 +39,7 @@ try {
     
 }
 
-$title = 'Gerenciar feriados | Chamada - FACENS';
+$title = 'Gerenciar feriados | Chamada - Wide Education';
 include './layout/page/feriados.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

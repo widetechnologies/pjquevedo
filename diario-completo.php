@@ -47,7 +47,7 @@ foreach ($feriados as $item) {
     $feriadosValidos[] = date("Y-m-d", strtotime($item->getData()));
 }//foreach
 //variaveis de meta
-$title = 'Diário de Sala - ' . ' - ' . $mesExtenso . ' | FACENS';
+$title = 'Diário de Sala - ' . ' - ' . $mesExtenso . ' | Wide Education';
 
 ob_start();
 include_once './layout/grid/diario-completo.grid.php';

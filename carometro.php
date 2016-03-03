@@ -12,7 +12,7 @@ $turma = unserialize($_SESSION['turma']);
 $alunoTurma->setId_turma($turma->getId_turma());
 $listaAlunos = $alunoTurma->selectAllbyId_turma();
 
-$title = 'Carômetro | Chamada - FACENS';
+$title = 'Carômetro | Chamada - Wide Education';
 include './layout/page/carometro.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

@@ -69,7 +69,7 @@ $profs = $profs->selectAll();
 $disc = new vw_disc();
 $discs = $disc->selectAll();
 
-$title = 'Turma | Chamada - FACENS';
+$title = 'Turma | Chamada - Wide Education';
 include './layout/page/turma.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

@@ -36,7 +36,7 @@ while ($dataAtual <= date("Y-m-d")) {
 }//while
 
 $_SESSION['diaValido'] = serialize($diaValido);
-$title = 'Selecionar Dia Para o Histórico  | Chamada - FACENS';
+$title = 'Selecionar Dia Para o Histórico  | Chamada - Wide Education';
 include './layout/page/seleciona-dia-historico.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

@@ -62,7 +62,7 @@ if (isset($_GET['id'])) {
 }
 $models = $model->selectAll();
 
-$title = 'Aluno | Chamada - FACENS';
+$title = 'Aluno | Chamada - Wide Education';
 include './layout/page/vwaluno.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';

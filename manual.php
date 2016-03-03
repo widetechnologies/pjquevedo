@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
     header("Location: ./conteudo");
     exit();
 }//isset submit
-$title = 'Chamada Manual | FACENS';
+$title = 'Chamada Manual | Wide Education';
 include './layout/page/manual.page.php';
 $corpo = ob_get_clean();
 include './layout/page/mestre.page.php';
