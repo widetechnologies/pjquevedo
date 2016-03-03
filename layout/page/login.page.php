@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-4">
-                    <h1 class="text-center login-title">Autenticação Chamada - Facens</h1>
+                    <h1 class="text-center login-title">Autenticação Chamada - Wide Education</h1>
                     <div class="account-wall">
                         <img class="profile-img" src="layout/img/logo_login.png" alt="">
                         <form class="form-signin "method="post" >

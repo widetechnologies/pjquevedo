@@ -20,7 +20,7 @@ if(isset($_SESSION['operador'])){
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Cache-Control" content="no-store" />
 
-        <title><?php echo isset($title) ? $title : 'Chamada | Wide Education - Faculdade de Engenharia de Sorocaba' ?></title>
+        <title><?php echo isset($title) ? $title : 'Chamada | Wide Education' ?></title>
         <link rel="icon" type="image/png" href="<?php echo _URI_ ?>/layout/img/favicon.ico">
 
         <!--Estilos da pagina-->
@@ -141,15 +141,6 @@ if(isset($_SESSION['operador'])){
             <!--</div>-->
             <div id="push"></div>
         </div>
-        <!--
-                <div id="footer">
-                    <div class="container">
-                        <div id="rodape">
-                            Wide Education - Faculdade de Engenharia de Sorocaba<br />
-                            &copy <?php // echo date('Y')    ?>
-                        </div>
-                    </div>
-                </div>
-        -->
+
     </body>
 </html>
