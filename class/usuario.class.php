@@ -5,7 +5,6 @@
  */
 
 include_once 'bd/banco.class.php';
-
 class usuario {
 
     private $id;
@@ -44,9 +43,11 @@ class usuario {
     }
 
     public function selectByLoginSenha() {
+    
         $bool = false;
         $link = banco::pdoCon();
-        $query = "SELECT * FROM escola.usuario WHERE login = ? AND senha = ?;";
+         
+        $query = "SELECT * FROM usuario WHERE login = ? AND senha = ?;";
         $stmt = $link->prepare($query);
 
         $result = $stmt->execute(array($this->login,  $this->senha));

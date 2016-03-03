@@ -6,7 +6,7 @@ include_once './include/classes.include.php';
 
 //objetos
 
-//start buffer
+
 ob_start();
 
 

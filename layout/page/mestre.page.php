@@ -1,7 +1,15 @@
 <?php
 include_once './include/autoload.include.php';
 include_once 'uri.php';
-$operador = isset($_SESSION['operador']) ? unserialize($_SESSION['operador']) : new usuario();
+if(isset($_SESSION['operador'])){
+    $operador = $_SESSION['operador'];
+    if(gettype($operador) == 'string'){
+        $operador = unserialize($operador);
+    }
+}else{
+    $operador = new usuario();
+}
+//$operador = isset($_SESSION['operador']) ? unserialize($_SESSION['operador']) : new usuario();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,12 +24,12 @@ $operador = isset($_SESSION['operador']) ? unserialize($_SESSION['operador']) : 
         <link rel="icon" type="image/png" href="<?php echo _URI_ ?>/layout/img/favicon.ico">
 
         <!--Estilos da pagina-->
-        <link rel="stylesheet" type="text/css" href="<?php echo _URI_ ?>/layout/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./layout/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="<?php echo _URI_ ?>/layout/bootstrap/css/bootstrap-datatable.css">
 
         <link rel="stylesheet" type="text/css" href="<?php echo _URI_ ?>/layout/bootstrap/css/bootstrap-datepicker3.min.css">
 
-
+ 
 
         <!--Scripts da pagina-->
         <script type="text/javascript" src="<?php echo _URI_ ?>/layout/js/jquery-1.11.2.js"></script>

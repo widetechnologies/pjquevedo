@@ -13,4 +13,4 @@ ErrorDocument 500 /semeng/pages/errors/error.php
 #Não listar arquivos em pastas
 Options -Indexes
 
-RewriteRule \.(ini)$ - [F]
+#RewriteRule \.(ini)$ - [F]

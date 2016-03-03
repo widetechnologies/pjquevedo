@@ -1,7 +1,6 @@
 <?php
-
-include './include/session.include.php';
 include './include/autoload.include.php';
+include './include/session.include.php';
 include './include/access.include.php';
 
 if (isset($_SESSION['turma']))
@@ -10,7 +9,11 @@ if (isset($_SESSION['dia']))
     unset($_SESSION['dia']);
 
 ob_start();
-$usuario = unserialize($_SESSION['operador']);
+
+$usuario = $operador;
+
+
+
 if ($usuario->getTipo() == 0) {
     header("Location: ./gerar-diario");
     exit();
@@ -107,11 +110,11 @@ for ($i = 2; $i <= 7; $i++) {
     }
 }
 $dias = array(
-    2 => "<i class='glyphicon glyphicon-calendar text-info'></i> Segunda-Feira", 
-    3 => "<i class='glyphicon glyphicon-calendar text-info'></i> Terça-Feira", 
-    4 => "<i class='glyphicon glyphicon-calendar text-info'></i> Quarta-Feira", 
-    5 => "<i class='glyphicon glyphicon-calendar text-info'></i> Quinta-Feira", 
-    6 => "<i class='glyphicon glyphicon-calendar text-info'></i> Sexta-Feira", 
+    2 => "<i class='glyphicon glyphicon-calendar text-info'></i> Segunda-Feira",
+    3 => "<i class='glyphicon glyphicon-calendar text-info'></i> Terça-Feira",
+    4 => "<i class='glyphicon glyphicon-calendar text-info'></i> Quarta-Feira",
+    5 => "<i class='glyphicon glyphicon-calendar text-info'></i> Quinta-Feira",
+    6 => "<i class='glyphicon glyphicon-calendar text-info'></i> Sexta-Feira",
     7 => "<i class='glyphicon glyphicon-calendar text-info'></i> Sábado"
 );
 

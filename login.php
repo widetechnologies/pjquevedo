@@ -1,7 +1,7 @@
 <?php
 
-include './include/autoload.include.php';
-include_once './include/session.include.php';
+include 'include/autoload.include.php';
+include_once 'include/session.include.php';
 
 ob_start();
 
@@ -24,7 +24,8 @@ if (isset($_POST['usuario'])) {
             if (is_numeric($usuario->getLogin())) {
                 $msg = "Ops! Você não tem acesso a esse sistema...";
             } else {
-                if ($usuario->selectByLoginSenha()) {                    
+                if ($usuario->selectByLoginSenha()) {
+                    $usuario->setSenha('');
                     $_SESSION['operador'] = serialize($usuario);
                     header('Location: ./');
                     exit();

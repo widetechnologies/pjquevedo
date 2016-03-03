@@ -8,8 +8,6 @@ $alunoPesquisa = new pesquisa_aluno();
 $usuario = unserialize($_SESSION['operador']);
 ob_start();
 
-
-// teste do git
 if (isset($_POST['submit'])) {
     if (!isset($_POST['aluno'])) {
         header("Location: ./aluno");
