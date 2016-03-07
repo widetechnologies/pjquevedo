@@ -58,12 +58,13 @@ if (isset($_POST['submit'])) {
             $presenca->deleteFromidAula($item->getId());
         }
         foreach ($aulas as $item) {
+            $item->delete();
             if ($item->getId_conteudo() != '') {
                 $conteudo = new conteudo();
                 $conteudo->setId($item->getId_conteudo());
                 $conteudo->delete();
             }
-            $item->delete();
+            
         }
 
         header("Location: ./seleciona-dia-historico");
