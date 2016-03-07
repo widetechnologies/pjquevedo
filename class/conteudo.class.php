@@ -76,7 +76,6 @@ class conteudo {
         $stmt = $link->prepare($query);
 
         $result = $stmt->execute(array($this->id));
-
         return $result;
     }
 
