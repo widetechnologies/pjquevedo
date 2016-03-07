@@ -42,7 +42,7 @@ class feriado{
 	{
 		$link = banco::pdoCon();
 		$list = array();
-		$query = "SELECT * FROM feriado;";
+		$query = "SELECT id as id_feriado, data FROM feriado;";
 
 		$stmt = $link->query($query);
 
@@ -79,7 +79,7 @@ class feriado{
 	{
 
 		$link = banco::pdoCon();
-		$query = "DELETE FROM feriado WHERE id_feriado = ?;";
+		$query = "DELETE FROM feriado WHERE id = ?;";
 		$stmt = $link->prepare($query);
 
 		$result = $stmt->execute(array($this->id_feriado));
@@ -92,7 +92,7 @@ class feriado{
 
 
 		$link = banco::pdoCon();
-		$query ="INSERT INTO feriado (data) OUTPUT inserted.id_feriado VALUES (?);";
+		$query ="INSERT INTO feriado (data)  VALUES (?);";
 		$stmt = $link->prepare($query);
 		$result = $stmt->execute(array($this->data));
 		$id = $stmt->fetch(PDO::FETCH_ASSOC);                         

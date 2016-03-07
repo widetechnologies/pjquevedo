@@ -1,4 +1,4 @@
-<!--<script>
+<script>
 
     $(function () {
         load();
@@ -13,7 +13,7 @@
         });
     }
 
-</script>-->
+</script>
 <div class="container">
     <div class="page-header text-center">
         <h1><i class="glyphicon glyphicon-sunglasses"></i> Feriados | Dias sem aula</h1>
@@ -33,7 +33,7 @@
                             format: 'yyyy-mm-dd',
                             language: "pt-BR",
                             daysOfWeekDisabled: "0",
-                            todayHighlight: false,
+                            todayHighlight: true,
                             datesDisabled: <?php echo json_encode($feriadosValidos); ?>
                         });
 
@@ -64,6 +64,7 @@
                             <?php
                             $cont = 0;
                             foreach ($feriados as $feriadoItem):
+                                
                                 $cont++;
                                 ?>
                                 <tr>
