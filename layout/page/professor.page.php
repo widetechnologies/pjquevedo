@@ -1,52 +1,69 @@
 <script>
-    $(function(){
+    $(function () {
         $('.table').dataTable({
             "language": {
                 "url": "layout/js/datatable.portugues.lang"
             }
         });
-        
+
     });
-    
+
 
 </script>
 <div class="container">
     <h1><i class="glyphicon glyphicon-education"></i> Professores</h1><hr>
-<!--    <div class="alert alert-dismissable alert-info fade in text-center" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <h3><i class="glyphicon glyphicon-info-sign"></i> Informações...</h3>
-        <p>
-            Aqui você pode fazer o controle dos usuários especiais, definindo suas permissões, seu nome de login e o nome definido pelo RM.
-        </p>
-        <p>
-            <strong>
-                Permissão 0: secretaria; 
-                Permissão 1: Administrador; 
-                Permissão 2: Professor; 
-                Permissão 3: Aluno.
-            </strong>
-        </p>
-    </div>-->
+    <!--    <div class="alert alert-dismissable alert-info fade in text-center" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h3><i class="glyphicon glyphicon-info-sign"></i> Informações...</h3>
+            <p>
+                Aqui você pode fazer o controle dos usuários especiais, definindo suas permissões, seu nome de login e o nome definido pelo RM.
+            </p>
+            <p>
+                <strong>
+                    Permissão 0: secretaria; 
+                    Permissão 1: Administrador; 
+                    Permissão 2: Professor; 
+                    Permissão 3: Aluno.
+                </strong>
+            </p>
+        </div>-->
 
     <div class="row">
         <div class="col-lg-4">
             <form method="POST">
-                <input type="hidden" name="id" value="<?php echo $model->getId()?>">
+                <input type="hidden" name="id" value="<?php echo $model->getId(); ?>">
                 <div class="form-group">
-                    <label for="nome">Nome:</label><br />
-                    <input value="<?php echo $model->getNome();?>" type="text" class="form-control" autofocus required name="nome" placeholder="Nome do professor" />
+                    <label for="nome">Professor:</label><br />
+                    <?php if ($model->getId() == ''): ?>
+                        <select required class="form-control" name="nome">
+                            <option selected value="" disabled>Selecione um professor</option>
+                            <?php foreach ($users as $user): ?>
+                                <option <?php
+                                if ($model->getcodprof() == $user->getLogin()) {
+                                    echo " selected";
+                                }
+                                ?> value="<?php echo $user->getLogin() . "|" . $user->getNome(); ?>"><?php echo $user->getNome(); ?></option>
+                                <?php endforeach; ?>
+                        </select>
+                    <?php else: ?>
+                        <?php foreach ($users as $user): ?>
+                            <?php if ($model->getcodprof() == $user->getLogin()): ?>
+                    <input class="form-control" type="text" disabled  value="<?php echo $user->getNome(); ?>" />
+                                <input type="hidden" name="nome" value="<?php echo $user->getLogin() . "|" . $user->getNome(); ?>" />
+                                <?php
+                                break;
+                            endif;
+                            ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
                 <div class="form-group">
                     <label for="email">Email: </label><br />
-                    <input value="<?php echo $model->getEmail();?>" type="email" class="form-control"  name="email" placeholder="Digite o email" />
+                    <input value="<?php echo $model->getEmail(); ?>" type="email" class="form-control"  name="email" placeholder="Digite o email" />
                 </div>
-                <div class="form-group">
-                    <label for="cod_prof">Código do professor: </label><br />
-                    <input value="<?php echo $model->getCodprof()?>" type="text" class="form-control" name="cod_prof" placeholder="Digite o código do professor" />
-                </div>
-               
+
                 <button name="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-save"></i> Salvar</button>
                 <a href="professor" class="btn btn-default"><i class="glyphicon glyphicon-erase"></i> Limpar</a>
             </form>

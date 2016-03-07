@@ -108,7 +108,7 @@ class vw_prof {
 
 
         $link = banco::pdoCon();
-        $query = "INSERT INTO vw_prof (cod_prof,nome,email,usuario) VALUES (?,?,?,?);";
+        $query = "INSERT INTO vw_prof (codprof,nome,email,usuario) VALUES (?,?,?,?);";
         $stmt = $link->prepare($query);
         $result = $stmt->execute(array($this->codprof, $this->nome, $this->email, $this->usuario));
         $this->id = $link->lastInsertId();

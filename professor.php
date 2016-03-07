@@ -8,21 +8,24 @@ if ($operador->getTipo() != 1) {
     header("Location: ./");
     exit();
 }
-
+$usuario = new usuario();
+$users = $usuario->selectAll();
 ob_start();
 $model = new vw_prof();
 
 if (isset($_POST['excluir'])) {
     $model->setId($_POST['excluir']);
     $model->delete();
+    header("Location: ./professor");
 }
 
 if (isset($_GET['id'])) {
     try {
         if (isset($_POST['submit'])) {
-            $nome = trim(strtoupper($_POST['nome']));
+            $exp = explode("|", $_POST['nome']);
+            $nome = trim(strtoupper($exp[1]));
             $email = $_POST['email'];
-            $cod_prof = $_POST['cod_prof'];
+            $cod_prof = $exp[0];
             $id = $_POST['id'];
 
             $model->setCodprof($id);
@@ -30,7 +33,8 @@ if (isset($_GET['id'])) {
             $model->setEmail($email);
             $model->setCodprof($cod_prof);
             $model->setId($id);
-
+            //  var_dump($model);
+            //  die();
             if ($id != '') {
                 $model->update();
                 header('location: professor');
@@ -48,9 +52,10 @@ if (isset($_GET['id'])) {
         die();
     }
 } else if (isset($_POST['submit'])) {
-    $nome = trim(strtoupper($_POST['nome']));
+    $exp = explode("|", $_POST['nome']);
+    $nome = trim(strtoupper($exp[1]));
     $email = $_POST['email'];
-    $cod_prof = $_POST['cod_prof'];
+    $cod_prof = $exp[0];
     $id = $_POST['id'];
 
     $model->setCodprof($id);
