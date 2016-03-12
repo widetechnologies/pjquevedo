@@ -113,6 +113,7 @@ if(isset($_SESSION['operador'])){
                                             <li><a href="<?php echo _URI_ ?>/alunocurso"><i class="glyphicon glyphicon-sort-by-attributes"></i> Aluno curso</a></li>
                                             <li><a href="<?php echo _URI_ ?>/alunoturma"><i class="glyphicon glyphicon-link"></i> Aluno turma</a></li>
                                             <li><a href="<?php echo _URI_ ?>/horaturma"><i class="glyphicon glyphicon-tags"></i> Hora turma</a></li>
+                                            <li><a href="<?php echo _URI_ ?>/load-arquivo"><i class="glyphicon glyphicon-upload"></i> Upload</a></li>
                                             <li class="divider"></li>
                                         <?php endif; ?>
                                         <li><a href="<?php echo _URI_ ?>/login?out"><i class="glyphicon glyphicon-off"></i> Sair</a></li>

@@ -8,6 +8,6 @@ function __autoload($class_name) {
         include("class/bd/$class_name.class.php");
     }
     else {
-        echo "Não foi possível carregar a arquivo de classe.";
+        echo "</br>Não foi possível carregar a arquivo de classe $class_name.</br>";
     }
 }
