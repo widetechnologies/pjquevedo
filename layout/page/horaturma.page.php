@@ -46,12 +46,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="id_horario">Horário: </label><br />
-                    <select name="id_horario" required class="form-control">
-                        <option value="" <?php echo $model->getId_horario() == '' ? 'selected' : '' ?>>Selecione um horário</option>
+                    <label for="id_horario">Horário: </label><br />    
+                    <?php if ($model->getId() == ''): ?>
                         <?php foreach ($horarios as $h): ?>
 
-                            <option value="<?php echo $h->getId_horario(); ?>" <?php echo $model->getId_horario() == $h->getId_horario() ? 'selected' : '' ?>><?php
+                            <label><input type="checkbox" name="id_horario[]" value="<?php echo $h->getId_horario(); ?>" /> <?php
                                 echo $h->getHora_ini() . '-' . $h->getHora_fim() . ' ';
                                 switch ($h->getDia_semana()) {
                                     case 0: $diasemana = "Domingo";
@@ -71,10 +70,40 @@
                                 }
                                 $turno = array('M' => 'Manhã', 'T' => 'Tarde', 'N' => 'Noite');
                                 echo $diasemana . ' - ' . $turno[$h->getTurno()];
-                                ?></option>
-                        <?php endforeach; ?>
+                                ?>
+                            <?php endforeach; ?>
 
-                    </select>
+                        </label>
+                    <?php else: ?>
+                        <select name="id_horario" required class="form-control">
+                            <option value="" <?php echo $model->getId_horario() == '' ? 'selected' : '' ?>>Selecione um horário</option>
+                            <?php foreach ($horarios as $h): ?>
+
+                                <option value="<?php echo $h->getId_horario(); ?>" <?php echo $model->getId_horario() == $h->getId_horario() ? 'selected' : '' ?>><?php
+                                    echo $h->getHora_ini() . '-' . $h->getHora_fim() . ' ';
+                                    switch ($h->getDia_semana()) {
+                                        case 0: $diasemana = "Domingo";
+                                            break;
+                                        case 1: $diasemana = "Segunda-Feira";
+                                            break;
+                                        case 2: $diasemana = "Terça-Feira";
+                                            break;
+                                        case 3: $diasemana = "Quarta-Feira";
+                                            break;
+                                        case 4: $diasemana = "Quinta-Feira";
+                                            break;
+                                        case 5: $diasemana = "Sexta-Feira";
+                                            break;
+                                        case 6: $diasemana = "Sábado";
+                                            break;
+                                    }
+                                    $turno = array('M' => 'Manhã', 'T' => 'Tarde', 'N' => 'Noite');
+                                    echo $diasemana . ' - ' . $turno[$h->getTurno()];
+                                    ?></option>
+                            <?php endforeach; ?>
+
+                        </select>
+                    <?php endif; ?>
                 </div>
                 <div class="form-group">
                     <label for="sala">Sala: </label><br />
