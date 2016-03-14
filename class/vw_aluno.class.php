@@ -20,6 +20,28 @@ class vw_aluno {
         $this->ra = $ra;
     }
 
+    public function selectAllById_curso($id_curso) {
+        $base = parse_ini_file('./config/conf.ini', true);
+        $perletivo = $base['perletivo'];
+        $perlet = $perletivo['perlet'];
+        $link = banco::pdoCon();
+        $list = array();
+        $query = "Select a.* from vw_aluno_curso ac join vw_curso c on ac.codcurso = c.id join vw_aluno a on ac.ra = a.ra Where c.id = ?;";
+        $stmt = $link->prepare($query);
+
+        $result = $stmt->execute(array($id_curso));
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $item = new vw_aluno();
+            foreach ($row as $key => $value) {
+                $column_name = str_replace('-', '_', $key);
+                $item->$column_name = $value;
+            }
+            $list[] = $item;
+        }
+        return $list;
+    }
+    
     public function selectAllPresentesByAula($id_aula) {
         $link = banco::pdoCon();
         $list = array();

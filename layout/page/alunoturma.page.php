@@ -6,6 +6,19 @@
             }
         });
 
+        $('#selectCursos').change(function () {
+            var val = $(this).val();
+            $.ajax({
+                url: 'alunoturma.php',
+                dataType: 'html',
+                method: 'post',
+                data: {select: val}
+            }).done(function (data) {
+                $('#ret').html(data);
+            });
+        });
+        
+       
     });
 
 
@@ -44,11 +57,25 @@
                         <?php endforeach; ?>
 
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="ra">Ra: </label><br />
-                    <input value="<?php echo $model->getRa(); ?>" type="text" class="form-control" required name="ra" placeholder="Digite o ra do aluno" />
-                </div> 
+                </div>                
+                <?php if ($model->getId() == ''): ?>
+                    <div class="form-group">
+                        <label for="curso">Curso: </label><br />
+                        <select class="form-control" id="selectCursos" name="curso" >
+                            <option>Selecione um curso</option>
+                            <?php foreach ($cursos as $curso): ?>
+                                <option value="<?php echo $curso->getId(); ?>"><?php echo $curso->getNome(); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div> 
+                    <div id="ret"></div>
+                <?php else: ?>
+                    <div class="form-group">
+                        <label for="ra">Ra: </label><br />
+                        <input value="<?php echo $model->getRa(); ?>" type="text" class="form-control" required name="ra" placeholder="Digite o ra do aluno" />
+                    </div> 
+                <?php endif; ?>
+
                 <div class="form-group">
                     <label for="perletivo">Período letivo: </label><br />
                     <input value="<?php echo $model->getPerletivo(); ?>" type="text" class="form-control" required name="perletivo" placeholder="Digite o período letivo" />
@@ -85,13 +112,13 @@
                                         echo $turma->getTurma();
                                         ?></td>
                                     <td><?php echo $item->getRa(); ?></td>
-                                    <td><?php echo $item->getPerletivo();?></td>
+                                    <td><?php echo $item->getPerletivo(); ?></td>
                                     <td class="text-center">
                                         <a class="btn-link" href="?id=<?php echo $item->getId(); ?>"><i class="glyphicon glyphicon-pencil"></i></a>
                                         <button class="btn-link" name="excluir" type="submit" value="<?php echo $item->getId(); ?>"><i class="glyphicon glyphicon-trash"></i></button>
                                     </td>
                                 </tr>
-<?php endforeach; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </form>
