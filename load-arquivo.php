@@ -23,8 +23,11 @@ if (isset($_POST['submit'])) {
         $curso = new vw_curso();
         $sheet = $objPHPExcel->getSheet($i);
         $curso->setNome($sheet->getTitle());
+        echo '<pre>';
+        echo "</br>Sala {$curso->getNome()} carregada com sucesso.</br>" ;
         var_dump($curso);
-        //$curso->insert();
+        echo '</pre>';
+        $curso->insert();
         $colunas = array('B', 'C', 'F','E');
         $total_c = PHPExcel_Cell::columnIndexFromString($sheet->getHighestColumn());
         $total_l = intval($sheet->getHighestRow());
@@ -40,7 +43,7 @@ if (isset($_POST['submit'])) {
             //echo "</br>Turno -> L: $l C: $c </br>";
             $aluno->setTurno(strval($sheet->getCell($colunas[$c] . $l)->getValue()));
             $c++;
-            //$aluno->insert();
+            $aluno->insert();
             //var_dump($aluno);
             $alunocurso = new vw_aluno_curso();
             $alunocurso->setRa($aluno->getRa());
@@ -48,8 +51,9 @@ if (isset($_POST['submit'])) {
             //$alunocurso->setPeriodo($aluno->getTurno());
             $alunocurso->setPerletivo(strval($sheet->getCell($colunas[$c] . $l)->getValue()));
             $alunocurso->setCodturno($aluno->getTurno());
-            //$alunocurso->insert();
+            $alunocurso->insert();
             //var_dump($alunocurso);
+            
             
         }
 //        echo '<table>';

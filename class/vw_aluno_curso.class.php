@@ -50,6 +50,9 @@ class vw_aluno_curso {
         $link = banco::pdoCon();
         $query = "INSERT INTO vw_aluno_curso (ra,codturno,codcurso,periodo,perletivo) VALUES (?,?,?,?,?);";
         $stmt = $link->prepare($query);
+//        echo '<pre>';
+//        print_r($this);
+//        echo '</pre>'; die();
         $result = $stmt->execute(array($this->ra,  $this->codturno, $this->codcurso, $this->periodo,  $this->perletivo));
         $this->id = $link->lastInsertId();
         return $result;

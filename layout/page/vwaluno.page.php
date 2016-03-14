@@ -82,11 +82,7 @@
                                     <td><?php echo $item->getRa(); ?></td>
                                     <td><?php echo $item->getNome(); ?></td>
                                     <td class="text-center"><?php echo $item->getCpf(); ?></td>
-                                    <td class="text-center"><?php
-                                        $turno = array('M' => 'Manhã', 'T' => 'Tarde', 'N' => 'Noite');
-                                        echo $turno[$item->getTurno()];
-                                        ?>
-                                    </td>
+                                    <td class="text-center"><?php echo $item->getTurno();?></td>
                                     <td class="text-center">
                                         <a class="btn-link" href="?id=<?php echo $item->getRa(); ?>"><i class="glyphicon glyphicon-pencil"></i></a>
                                         <button class="btn-link" name="excluir" type="submit" value="<?php echo $item->getRa(); ?>"><i class="glyphicon glyphicon-trash"></i></button>

@@ -105,11 +105,7 @@
                                         ?></td>
                                     <td class="text-center"><?php echo $item->getPeriodo(); ?></td>
                                     <td class="text-center"><?php echo $item->getPerletivo(); ?></td>
-                                    <td class="text-center"><?php
-                                        $turno = array('M' => 'Manhã', 'T' => 'Tarde', 'N' => 'Noite');
-                                        echo $turno[$item->getCodturno()];
-                                        ?>
-                                    </td>
+                                    <td class="text-center"><?php echo $item->getCodturno();?></td>
                                     <td class="text-center">
                                         <a class="btn-link" href="?id=<?php echo $item->getId(); ?>"><i class="glyphicon glyphicon-pencil"></i></a>
                                         <button class="btn-link" name="excluir" type="submit" value="<?php echo $item->getId(); ?>"><i class="glyphicon glyphicon-trash"></i></button>
