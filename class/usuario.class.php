@@ -5,6 +5,7 @@
  */
 
 include_once 'bd/banco.class.php';
+
 class usuario {
 
     private $id;
@@ -43,14 +44,14 @@ class usuario {
     }
 
     public function selectByLoginSenha() {
-    
+
         $bool = false;
         $link = banco::pdoCon();
-         
+
         $query = "SELECT * FROM usuario WHERE login = ? AND senha = ?;";
         $stmt = $link->prepare($query);
 
-        $result = $stmt->execute(array($this->login,  $this->senha));
+        $result = $stmt->execute(array($this->login, sha1($this->senha)));
         //var_dump($stmt->errorInfo()); die();
         if ($result > 0) {
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -105,20 +106,28 @@ class usuario {
     }
 
     public function update() {
-
-
         $link = banco::pdoCon();
-        $query = "UPDATE usuario SET 
+        if ($this->senha != '') {
+            $query = "UPDATE usuario SET 
+                login = ?,
+                nome = ?,
+                senha = ?,
+                tipo = ?,
+                ativo = ? 
+                WHERE id = ?;";
+            $stmt = $link->prepare($query);
+            $result = $stmt->execute(array($this->login, $this->nome, sha1($this->senha), $this->tipo, $this->ativo, $this->id));
+        } else {
+            $query = "UPDATE usuario SET 
                 login = ?,
                 nome = ?,
                 tipo = ?,
                 ativo = ? 
                 WHERE id = ?;";
+            $stmt = $link->prepare($query);
 
-        $stmt = $link->prepare($query);
-
-        $result = $stmt->execute(array($this->login, $this->nome, $this->tipo, $this->ativo, $this->id));
-
+            $result = $stmt->execute(array($this->login, $this->nome, $this->tipo, $this->ativo, $this->id));
+        }
         return $result;
     }
 
@@ -135,11 +144,11 @@ class usuario {
 
     public function insert() {
         $link = banco::pdoCon();
-        $query = "INSERT INTO usuario (login,nome,tipo,ativo) VALUES (?,?,?,?);";
+        $query = "INSERT INTO usuario (login,nome,tipo,ativo, senha) VALUES (?,?,?,?,?);";
         $this->ativo = 1;
         $stmt = $link->prepare($query);
-        $result = $stmt->execute(array($this->login, $this->nome, $this->tipo, $this->ativo));
-        
+        $result = $stmt->execute(array($this->login, $this->nome, $this->tipo, $this->ativo, sha1($this->senha)));
+
         $this->id = $link->lastInsertId();
         return $result;
     }

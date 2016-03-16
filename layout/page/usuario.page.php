@@ -36,15 +36,15 @@
                 <input type="hidden" name="id" value="<?php echo $usuarioU->getId()?>">
                 <div class="form-group">
                     <label for="login">Login:</label><br />
-                    <input value="<?php echo $usuarioU->getLogin()?>" type="text" class="form-control" autofocus required name="login" placeholder="Nome de usuário no domínio" />
+                    <input value="<?php echo $usuarioU->getLogin()?>" type="text" class="form-control" autofocus required name="login" placeholder="Nome de usuário para login" />
                 </div>
                 <div class="form-group">
                     <label for="nome">Senha: </label><br />
-                    <input value="<?php echo $usuarioU->getSenha()?>" type="password" class="form-control" required name="senha" placeholder="Digite a senha" />
+                    <input type="password" class="form-control" value="" <?php if($usuarioU->getId() == '') echo "required"; ?> name="senha" placeholder="Digite a senha" />
                 </div>
                 <div class="form-group">
                     <label for="nome">Nome: </label><br />
-                    <input value="<?php echo $usuarioU->getNome()?>" type="text" class="form-control" required name="nome" placeholder="Digite o usuário no RM (codprof)" />
+                    <input value="<?php echo $usuarioU->getNome()?>" type="text" class="form-control" required name="nome" placeholder="Digite o Nome do usuário" />
                 </div>
                 <div class="form-group">
                     <label for="tipo">Tipo: </label><br />
@@ -66,7 +66,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center col-sm-1">Nº</th>
-                                <th>Login Domínio</th>
+                                <th>Login</th>
                                 <th>Nome</th>
                                 <th class="text-center col-sm-1">Tipo</th>
                                 <th class="text-center col-sm-1">Excluir</th>

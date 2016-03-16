@@ -14,6 +14,8 @@ if (isset($_POST['submit'])) {
             $feriado = new feriado();
             $feriado->setData($_POST['calendario']);
             $feriado->insert();
+            
+            header("Location: ./feriados");
         } catch (Exception $ex) {
             
         }
@@ -25,6 +27,7 @@ if (isset($_POST['excluir'])) {
         $feriadoExclui = new feriado();
         $feriadoExclui->setId_feriado($_POST['excluir']);
         $feriadoExclui->delete();
+        header("Location: ./feriados");
     } catch (Exception $ex) {
         
     }
