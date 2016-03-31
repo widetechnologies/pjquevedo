@@ -5,10 +5,16 @@ include './include/access.include.php';
 ob_start();
 set_time_limit(0);
 ?>
-<div class="container-fluid">
+<div class="container">
+    <h1><i class="glyphicon glyphicon-upload text-info"></i> Enviar Arquivo XLS</h1>
+    <p>Adicione um arquivo xls com os dados dos aulnos, com suas devidas salas. O arquivo deve ser no formato xls 2003.</p>
     <form enctype="multipart/form-data" method="POST">
+        <div class="form-group">
         <input type="file" name="arquivo" />
+        </div>
+        <div class="form-group">
         <button name="submit" class="btn btn-success" type="submit"> Enviar</button>
+        </div>
     </form>
 </div>
 <?php

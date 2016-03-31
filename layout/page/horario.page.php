@@ -46,13 +46,13 @@
                     <label for="dia_semana">Dia da semana: </label><br />
                     <select name="dia_semana" required class="form-control">
                         <option value="" <?php echo $model->getDia_semana() == '' ? 'selected' : '' ?>>Selecione um dia</option>
-                        <option value="1" <?php echo $model->getDia_semana() == 1 ? 'selected' : '' ?>>Segunda-feira</option>
-                        <option value="2" <?php echo $model->getDia_semana() == 2 ? 'selected' : '' ?>>Terça-feira</option>
-                        <option value="3" <?php echo $model->getDia_semana() == 3 ? 'selected' : '' ?>>Quarta-feira</option>
-                        <option value="4" <?php echo $model->getDia_semana() == 4 ? 'selected' : '' ?>>Quinta-feira</option>
-                        <option value="5" <?php echo $model->getDia_semana() == 5 ? 'selected' : '' ?>>Sexta-feira</option>
-                        <option value="6" <?php echo $model->getDia_semana() == 6 ? 'selected' : '' ?>>Sábado</option>
-                        <option value="7" <?php echo $model->getDia_semana() == 7 ? 'selected' : '' ?>>Domingo</option>
+                        <option value="2" <?php echo $model->getDia_semana() == 2 ? 'selected' : '' ?>>Segunda-feira</option>
+                        <option value="3" <?php echo $model->getDia_semana() == 3 ? 'selected' : '' ?>>Terça-feira</option>
+                        <option value="4" <?php echo $model->getDia_semana() == 4 ? 'selected' : '' ?>>Quarta-feira</option>
+                        <option value="5" <?php echo $model->getDia_semana() == 5 ? 'selected' : '' ?>>Quinta-feira</option>
+                        <option value="6" <?php echo $model->getDia_semana() == 6 ? 'selected' : '' ?>>Sexta-feira</option>
+                        <option value="7" <?php echo $model->getDia_semana() == 7 ? 'selected' : '' ?>>Sábado</option>
+                        <option value="0" <?php echo $model->getDia_semana() == 8 ? 'selected' : '' ?>>Domingo</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -97,17 +97,17 @@
                                         switch ($item->getDia_semana()) {
                                             case 0: $diasemana = "Domingo";
                                                 break;
-                                            case 1: $diasemana = "Segunda-Feira";
+                                            case 2: $diasemana = "Segunda-Feira";
                                                 break;
-                                            case 2: $diasemana = "Terça-Feira";
+                                            case 3: $diasemana = "Terça-Feira";
                                                 break;
-                                            case 3: $diasemana = "Quarta-Feira";
+                                            case 4: $diasemana = "Quarta-Feira";
                                                 break;
-                                            case 4: $diasemana = "Quinta-Feira";
+                                            case 5: $diasemana = "Quinta-Feira";
                                                 break;
-                                            case 5: $diasemana = "Sexta-Feira";
+                                            case 6: $diasemana = "Sexta-Feira";
                                                 break;
-                                            case 6: $diasemana = "Sábado";
+                                            case 7: $diasemana = "Sábado";
                                                 break;
                                         }
                                         echo $diasemana;

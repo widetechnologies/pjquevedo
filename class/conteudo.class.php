@@ -66,7 +66,7 @@ class conteudo {
 
         $result = $stmt->execute(array($this->conteudo));
 
-        return result;
+        return $result;
     }
 
     public function delete() {
@@ -88,7 +88,7 @@ class conteudo {
         $stmt->execute(array($this->conteudo));
 
         $this->id = $link->lastInsertId();
-        return $result;
+ 
     }
 
     public function setId($id = '') {

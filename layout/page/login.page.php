@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="layout/img/favicon.ico">
-        <title>Login - Chamada | Wide Education</title>
+        <title>Login - Chamada | E.E.Professor Jos� Quevedo</title>
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="layout/bootstrap/css/bootstrap.css">
         <!-- Custom styles for this template -->
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-4">
-                    <h1 class="text-center login-title">Autenticação Chamada - Wide Education</h1>
+                    <h1 class="text-center login-title">Autenticação Chamada-Jose Quevedo Prof.</h1>
                     <div class="account-wall">
                         <img class="profile-img" src="layout/img/logo_login.png" alt="">
                         <form class="form-signin "method="post" >

@@ -62,7 +62,7 @@ class vw_horario {
     public function selectAll() {
         $link = banco::pdoCon();
         $list = array();
-        $query = "SELECT * FROM vw_horario;";
+        $query = "SELECT * FROM vw_horario ORDER BY dia_semana,hora_ini;";
 
         $stmt = $link->query($query);
 
