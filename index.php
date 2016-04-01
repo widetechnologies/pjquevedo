@@ -12,7 +12,7 @@ ob_start();
 
 $usuario = $operador;
 
-
+//index
 
 if ($usuario->getTipo() == 0) {
     header("Location: ./gerar-diario");
