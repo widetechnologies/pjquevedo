@@ -9,7 +9,7 @@ if (isset($_SESSION['dia']))
     unset($_SESSION['dia']);
 
 ob_start();
-
+//ooo
 $usuario = $operador;
 
 
